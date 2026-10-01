@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>QQ资料卡</title>
+
+    <!-- 1. 资源预连接：让浏览器提前连接腾讯的图片服务器，极大地加快后续几百张图片的加载速度 -->
+    <link rel="preconnect" href="https://tianquan.gtimg.cn" crossorigin>
+    <link rel="preconnect" href="https://qzonestyle.gtimg.cn" crossorigin>
+    <link rel="preconnect" href="https://qqvip-web.cdn-go.cn" crossorigin>
+
+    <!-- 2. 样式注入：放在 head 里最先加载，防止页面出现无样式的闪烁（白屏） -->
+    <script src="GuYi.js"></script>
+</head>
+<body>
+    
+    <!-- 3. 核心逻辑文件：加上 defer 属性 -->
+    <!-- defer 的作用：让这 5 个 JS 文件在后台“同时并行”下载，绝对不阻塞 HTML 的解析，并且会自动按照书写顺序依次执行 -->
+    <script src="config.js" defer></script>
+    <script src="template.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="render.js" defer></script>
+    <script src="vip.js" defer></script>
+    
+</body>
+</html>
